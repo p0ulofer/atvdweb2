@@ -24,6 +24,7 @@ class BookController extends Controller
             'publisher_id' => 'required|exists:publishers,id',
             'author_id' => 'required|exists:authors,id',
             'category_id' => 'required|exists:categories,id',
+            'published_year' => 'required|integer|min:1000|max:' . date('Y'),
         ]);
 
         Book::create($request->all());
@@ -49,6 +50,7 @@ class BookController extends Controller
             'publisher_id' => 'required|exists:publishers,id',
             'author_id' => 'required|exists:authors,id',
             'category_id' => 'required|exists:categories,id',
+            'published_year' => 'required|integer|min:1000|max:' . date('Y'),
         ]);
 
         Book::create($request->all());
@@ -88,6 +90,7 @@ class BookController extends Controller
             'publisher_id' => 'required|exists:publishers,id',
             'author_id' => 'required|exists:authors,id',
             'category_id' => 'required|exists:categories,id',
+            'published_year' => 'required|integer|min:1000|max:' . date('Y'),
         ]);
 
         $book->update($request->all());
